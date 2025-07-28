@@ -36,7 +36,7 @@ jobs:
         aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
         aws-region: us-east-1  # cambia según tu región
     - name: Deploy to S3
-      run: aws s3 sync build/ s3://$S3_BUCKET_NAME --delete
+      run: aws s3 sync dist/ s3://$S3_BUCKET_NAME --delete
       env:
         S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         
